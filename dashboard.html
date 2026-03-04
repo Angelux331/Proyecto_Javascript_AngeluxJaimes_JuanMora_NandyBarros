@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard | project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>IE ABC <span>Admin</span></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">resumen</a></li>
+                    <li><a href="#cursos">gestion de cursos</a></li>
+                    <li><a href="#docentes">gestion de docentes</a></li>
+                    <li><a href="#administrativos">administrativos</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" id="logout-btn" class="btn btn-outline btn-block">cerrar sesion</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h2>panel principal</h2>
+                    <p>bienvenido al sistema de gestion LMS</p>
+                </div>
+                <div class="header-user">
+                    <span>admin principal</span>
+                </div>
+            </header>
+
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>cursos activos</h3>
+                        <p class="stat-number" id="count-courses">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>docentes registrados</h3>
+                        <p class="stat-number" id="count-teachers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>administrativos</h3>
+                        <p class="stat-number" id="count-admins">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="management-section">
+                <div class="section-header">
+                    <h3>cursos recientes</h3>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary">+ nuevo curso</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>codigo</th>
+                                <th>nombre del curso</th>
+                                <th>docente</th>
+                                <th>estado</th>
+                                <th>acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courses-table-body">
+                            <tr>
+                                <td>MAT-101</td>
+                                <td>calculo integral y diferencial</td>
+                                <td>prof. roberto gomez</td>
+                                <td><span class="status-badge active">activo</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-text edit">editar</button>
+                                    <button class="btn-text delete">eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
