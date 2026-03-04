@@ -13,10 +13,18 @@
         <div class="login-card">
             <div class="login-header">
                 <h2>IE ABC <span>LMS</span></h2>
-                <p>acceso al panel de administracion</p>
+                <p>acceso a la plataforma</p>
             </div>
             
             <form id="login-form">
+                <div class="form-group">
+                    <label for="role">tipo de usuario</label>
+                    <select id="role" class="form-control" required>
+                        <option value="admin">administrador</option>
+                        <option value="docente">docente</option>
+                        <option value="estudiante">estudiante</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="email">correo electronico</label>
                     <input type="email" id="email" class="form-control" required>
