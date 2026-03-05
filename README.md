@@ -89,7 +89,7 @@ Admin: admin@abc.edu.co / admin123 (rol: admin)
 
 ---
 
-**👨‍💻 Desarrollado por Angelux**  
+**👨‍💻 Desarrollado por Angelux, Juan Mora, Nandy Nicolas Barros**  
 **📅 Marzo 2026 - Bucaramanga, Colombia**  
 **🎓 Proyecto académico - Maestría en Desarrollo Web**
 
