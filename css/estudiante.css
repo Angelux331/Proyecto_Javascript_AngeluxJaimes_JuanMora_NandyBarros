@@ -1,3 +1,33 @@
+:root {
+  /* Fondo y superficies MÁS CLARAS */
+  --bg-body: #0f0f23;         /* fondo principal (gris azulado claro) */
+  --bg-surface: #1a1b2e;      /* tarjetas / paneles (más luminoso) */
+  --bg-surface-alt: #16213e;  /* variantes / listas */
+
+  /* Texto */
+  --text-main: #e5e7eb;
+  --text-strong: #f9fafb;
+  --text-muted: #9ca3af;
+  --text-soft: #6b7280;
+
+  /* Accentos */
+  --primary: #3b82f6;
+  --primary-soft: #1d4ed8;
+  --primary-light: #93c5fd;
+
+  /* Bordes y líneas */
+  --border-subtle: #334155;
+  --border-strong: #475569;
+
+  /* Sombras */
+  --shadow-soft: 0 8px 32px rgba(15, 23, 42, 0.6);
+  --shadow-strong: 0 16px 48px rgba(15, 23, 42, 0.85);
+
+  /* Chips / Pills */
+  --chip-bg: rgba(59, 130, 246, 0.15);
+  --chip-bg-hover: rgba(37, 99, 235, 0.25);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +36,18 @@
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background: #f5f7fa;
-  color: #333;
+  background: var(--bg-body);
+  color: var(--text-main);
 }
 
+/* HEADER */
 .estudiante-header {
-  background: linear-gradient(135deg, #4361ee 0%, #3451d6 100%);
+  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--bg-body) 60%, #000000 100%);
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.8);
 }
 
 .estudiante-header .container {
@@ -28,28 +60,31 @@ body {
 }
 
 .estudiante-header h1 {
-  color: white;
+  color: var(--text-strong);
   font-size: 1.5rem;
 }
 
 .estudiante-header h1 span {
   font-weight: 300;
+  color: var(--primary-light);
 }
 
 .estudiante-header a {
-  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-muted);
   text-decoration: none;
   padding: 8px 20px;
-  border: 2px solid white;
-  border-radius: 25px;
   transition: all 0.3s;
+  background: transparent;
 }
 
 .estudiante-header a:hover {
-  background: white;
-  color: #4361ee;
+  border-radius: 15px;
+  color: var(--primary);
 }
 
+/* LAYOUT PRINCIPAL */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -63,14 +98,16 @@ body {
 .catalogo-section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-strong);
+  text-transform: capitalize;
 }
 
 .catalogo-section p {
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 30px;
 }
 
+/* GRID DE CURSOS */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -78,21 +115,23 @@ body {
 }
 
 .course-card {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-strong);
   transition: all 0.3s;
 }
 
 .course-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-strong);
 }
 
+/* CABECERA DEL CURSO */
 .course-image {
   height: 160px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: radial-gradient(circle at top left, var(--primary) 0%, var(--bg-surface) 55%, var(--bg-body) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,74 +139,80 @@ body {
 }
 
 .course-image .img-placeholder {
-  color: white;
+  color: var(--primary);
   font-size: 1.5rem;
   font-weight: 600;
 }
 
+/* CONTENIDO DEL CURSO */
 .course-content {
   padding: 25px;
 }
 
 .course-tag {
   display: inline-block;
-  background: #e8edff;
-  color: #4361ee;
+  background: var(--chip-bg);
+  color: var(--primary-light);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+  text-transform: lowercase;
 }
 
 .course-content h3 {
   margin: 15px 0;
   font-size: 1.3rem;
-  color: #333;
+  color: var(--text-strong);
 }
 
 .course-description {
-  color: #666;
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+/* META DEL CURSO */
 .course-meta {
   display: flex;
   justify-content: space-between;
   padding: 15px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-subtle);
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-soft);
 }
 
 .course-meta strong {
-  color: #555;
+  color: var(--text-main);
 }
 
+/* FOOTER DEL CURSO */
 .course-footer {
-  padding: 0 25px 25px;
+  padding: 25px 25px 25px;
 }
 
 .btn-explorar {
   display: block;
   width: 100%;
   padding: 12px;
-  background: #4361ee;
-  color: white;
+  background: var(--primary);
+  color: var(--text-strong);
   text-align: center;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .btn-explorar:hover {
-  background: #3451d6;
+  background: var(--primary-soft);
+  transform: translateY(-1px);
 }
 
+/* DETALLE CURSO */
 .detalle-curso {
   display: none;
 }
@@ -180,11 +225,12 @@ body {
   display: none;
 }
 
+/* BOTÓN VOLVER */
 .btn-volver {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #4361ee;
+  color: var(--primary-light);
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 20px;
@@ -195,41 +241,47 @@ body {
   text-decoration: underline;
 }
 
+/* HEADER DETALLE */
 .detalle-header {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 16px;
   padding: 30px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-strong);
 }
 
 .detalle-header h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--text-strong);
 }
 
 .detalle-header .badge-categoria {
   display: inline-block;
-  background: #4361ee;
-  color: white;
+  background: var(--primary);
+  color: var(--text-strong);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 0.9rem;
   margin-bottom: 15px;
+  text-transform: lowercase;
 }
 
 .detalle-header p {
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.8;
 }
 
+/* DOCENTE INFO */
 .docente-info {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #eee;
-  color: #555;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-main);
 }
 
+/* MÓDULOS */
 .modulos-container {
   display: flex;
   flex-direction: column;
@@ -237,15 +289,16 @@ body {
 }
 
 .modulo-card {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-strong);
 }
 
 .modulo-header {
-  background: linear-gradient(135deg, #4361ee 0%, #3451d6 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--bg-body) 100%);
+  color: var(--text-main);
   padding: 20px;
   cursor: pointer;
   display: flex;
@@ -258,12 +311,13 @@ body {
 }
 
 .modulo-header .lecc-count {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.7);
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.85rem;
 }
 
+/* CONTENIDO DEL MÓDULO */
 .modulo-contenido {
   padding: 20px;
   display: none;
@@ -274,11 +328,12 @@ body {
 }
 
 .modulo-contenido p {
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 20px;
   font-size: 0.95rem;
 }
 
+/* LECCIONES */
 .lecciones-list {
   display: flex;
   flex-direction: column;
@@ -286,26 +341,26 @@ body {
 }
 
 .leccion-item {
-  background: #f8f9fa;
+  background: var(--bg-surface-alt);
   border-radius: 10px;
   padding: 18px;
-  border-left: 4px solid #4361ee;
+  border-left: 4px solid var(--primary);
 }
 
 .leccion-item h5 {
-  color: #333;
+  color: var(--text-strong);
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
 .leccion-item .intensidad {
-  color: #888;
+  color: var(--text-soft);
   font-size: 0.85rem;
   margin-bottom: 10px;
 }
 
 .leccion-item .contenido {
-  color: #555;
+  color: var(--text-main);
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -322,8 +377,8 @@ body {
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  background: #e8edff;
-  color: #4361ee;
+  background: var(--chip-bg);
+  color: var(--primary-light);
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -331,16 +386,17 @@ body {
 }
 
 .leccion-item .multimedia a:hover {
-  background: #d0daf5;
+  background: var(--chip-bg-hover);
 }
 
+/* ESTADO VACÍO */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
-  color: #888;
+  color: var(--text-soft);
 }
 
 .empty-state h3 {
   margin-bottom: 10px;
-  color: #666;
+  color: var(--text-muted);
 }
